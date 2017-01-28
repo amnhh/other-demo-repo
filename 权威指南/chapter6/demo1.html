@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>delete操作符</title>
+</head>
+<body>
+  <script>
+    var o = {
+      again : {
+        a : 1,
+        b : 2
+      },
+      amnhh : 2
+    };
+    var b = o.again;
+    delete o.again;
+    console.log(b); // 打印出了 {a : 1, b : 2}
+  </script>
+</body>
+</html>

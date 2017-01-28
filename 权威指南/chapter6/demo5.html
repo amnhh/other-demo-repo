@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>属性描述符</title>
+</head>
+<body>
+  <script>
+    console.log(Object.getOwnPropertyDescriptor({x : 1}, 'x')); // Object {value: 1, writable: true, enumerable: true, configurable: true}
+
+    var random = {
+      get amnhh () {
+        return '123';
+      }
+    };
+    console.log(Object.getOwnPropertyDescriptor(random, 'amnhh')); // Object {set: undefined, enumerable: true, configurable: true}
+
+    console.log(Object.getOwnPropertyDescriptor({}, 'x')); // undefiend
+    console.log(Object.getOwnPropertyDescriptor({}, 'toString')); // undefined
+  </script>
+</body>
+</html>

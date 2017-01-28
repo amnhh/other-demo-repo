@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Object.defineProperty</title>
+</head>
+<body>
+  <script>
+    var o = {};
+    Object.defineProperty(o, 'x', {
+      value : 1,
+      writable : true,
+      configurable : true,
+      enumerable : false
+    });
+    console.log(o.x); // 1
+
+    console.log(Object.keys(o)); // [] => 空对象, 因为我们设置了 x 属性为不可枚举
+
+    // 这是为不可写
+    Object.defineProperty(o, 'x', {
+      writable : false
+    });
+    o.x = 2;
+    console.log(o.x); // 1 -> 还是 1, 并没有改变也
+
+    // 这个时候属性依然是可配置的, 我们就可以通过这种方式进行修改
+    Object.defineProperty(o, 'x', {
+      value : 2
+    });
+    console.log(o.x); // 2 -> 通过 defineProperty 进行了修改
+
+    // 现在将 x 从数据属性修改为存取器属性
+    Object.defineProperty(o, 'x', {
+      get : function () {
+        return 5;
+      }
+    });
+    console.log(o.x); // 5 -> 走的数据就是 get 函数的返回值了
+  </script>
+</body>
+</html>

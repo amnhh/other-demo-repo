@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>存取器属性</title>
+</head>
+<body>
+  <script>
+    var o = {
+      num : 1,
+      get prop () {
+        return this.num + 1;
+      },
+      set prop (o) {
+        this.num += o;
+      }
+    };
+    console.log(o.prop); // 2
+    o.prop = 5;
+    console.log(o.prop); // 7
+  </script>
+</body>
+</html>

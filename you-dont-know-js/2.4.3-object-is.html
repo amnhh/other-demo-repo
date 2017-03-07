@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script>
+  console.log(Object.is(0, -3 * 0)); // false
+  console.log(Object.is(-0, -3 * 0)); // true
+  console.log(Object.is(NaN, NaN)); // true
+</script>
+</body>
+</html>

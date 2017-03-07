@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title></title>
+</head>
+<body>
+  <script>
+    console.log(JSON.stringify(undefined)); // undefined
+    console.log(JSON.stringify(function a () {})); // undefiend
+    console.log(JSON.stringify(Symbol('again'))); // undefiend
+    console.log(JSON.stringify([undefined, undefined, function a () {}, Symbol('again')])); // [null, null, null, null]
+    console.log(JSON.stringify({a : function () {}, b : undefined, c : 'again'})); // {"c" : "again"}
+    var o = {a : '1', b : o};
+    console.log(JSON.stringify(o));
+  </script>
+</body>
+</html>

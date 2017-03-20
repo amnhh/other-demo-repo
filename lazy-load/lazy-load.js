@@ -57,7 +57,7 @@ proto.showElementIfInScreen = function () {
 
 proto.loadPic = function (ele) {
   var imgs = ele.getElementsByTagName('img');
-  for (var i = 0, i < imgs.length; i < len; i ++) {
+  for (var i = 0, len = imgs.length; i < len; i ++) {
     var img = imgs[i];
     var src = img.getAttribute(this.property);
     src && img.setAttribute('src', src);

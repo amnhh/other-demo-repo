@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button id="myBtn">JSONP</button>
+  <script>
+    var oBtn = document.getElementById('myBtn');
+    oBtn.onclick = function () {
+      jsonpServer('index.php');
+    };
+    function jsonpServer (url) {
+      var script = document.createElement('script');
+      script.setAttribute('type', 'text/javascript');
+      script.setAttribute('src', url);
+      document.body.appendChild(script);
+    };
+    function JSON_CALLBACK (data) {
+      console.log(data);
+    }
+  </script>
+</body>
+</html>

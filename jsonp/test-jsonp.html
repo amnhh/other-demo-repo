@@ -8,15 +8,19 @@
   <button id="myBtn">JSONP</button>
   <script>
     var oBtn = document.getElementById('myBtn');
-    oBtn.onclick = function () {
+
+    // 简单添加一个事件
+    oBtn.addEventListener('click', function () {
       jsonpServer('index.php');
-    };
+    });
+
+    // jsonp 的底层原理
     function jsonpServer (url) {
       var script = document.createElement('script');
       script.setAttribute('type', 'text/javascript');
       script.setAttribute('src', url);
       document.body.appendChild(script);
-    };
+    }
     function JSON_CALLBACK (data) {
       console.log(data);
     }

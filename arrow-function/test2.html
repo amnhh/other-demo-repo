@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script>
+  // function testA () {
+  //   this.name = `hello`
+
+  //   var fn = function () {
+  //     console.log(this)
+  //     console.log(this.name)
+  //   }
+
+  //   var arrowFn = () => {
+  //     console.log(this)
+  //     console.log(this.name)
+  //   }
+
+  //   fn()
+  //   arrowFn()
+  // }
+  // testA(); // 都指向 window
+
+
+  // function testB () {
+  //   this.name = `hello`
+
+  //   var fn = function () {
+  //     console.log(this)
+  //     console.log(this.name)
+  //   }
+
+  //   var obj = {
+  //     name : `amnhh`,
+  //     fn : fn
+  //   }
+
+  //   obj.fn()
+  // }
+  // testB() // this -> obj, this.name -> `amnhh`
+
+
+  function testC () {
+    var arrowFn = () => {
+      console.log(this)
+      console.log(this.name)
+    }
+    arrowFn()
+  }
+
+  testC() // this -> window, this.name => 未定义
+  testC.bind({name : 1})() // this -> {name : 1}, this.name -> 1
+
+  var obj = {
+    testC : testC
+  }
+
+  obj.testC() // this -> obj, this.name => 未定义
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

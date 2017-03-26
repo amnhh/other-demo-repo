@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script>
+  let a = () => {
+    console.log(this);
+  }
+  a(); // window
+
+  let b = {
+    a : () => {
+      console.log(this);
+    }
+  }
+  b.a(); // window
+
+  let c = {
+    a : function () {
+      console.log(this);
+    }
+  }
+  c.a(); // Object c
+
+  function foo () {
+    console.log(this);
+    (() => {
+      console.log(this);
+    })();
+  }
+  // 以一个对象来 call 这个 foo
+  foo.call({anning : 1});
+  foo();
+</script>
+</body>
+</html>

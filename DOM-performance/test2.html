@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="test">a</p>
+    <script>
+      var str = '';
+      for (var count = 0; count < 15000; count ++) {
+        str += 'a';
+      }
+      document.getElementById('test').innerHTML += str;
+    </script>
+    <p>执行截图 : </p>
+    <img src="https://raw.githubusercontent.com/amnhh/blog-images/master/2017-03/17-03-27-03.png" alt="">
+  </body>
+</html>

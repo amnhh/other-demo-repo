@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="myBtn">Click</button>
+<script>
+  var oBtn = document.getElementById('myBtn');
+
+  // btn -> Capturing phase
+  oBtn.addEventListener('click', function () {
+    console.log('Button clicked on Caputring phase');
+  });
+  document.body.addEventListener('click', function () {
+    console.log('Body clicked on Bubbling phase');
+  }, true);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a href="http://www.google.com" target="_blank" id="myLink">Click</a>
+<script>
+  var oLink = document.getElementById('myLink');
+  oLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log(e);
+    console.log(e.target);
+    console.log('currentTarget', e.currentTarget);
+  });
+  document.body.addEventListener('click', function (e) {
+    console.log(e.target);
+    console.log('currentTarget', e.currentTarget);
+  });
+</script>
+</body>
+</html>

@@ -16,6 +16,12 @@
   document.body.addEventListener('click', function () {
     console.log('Body clicked on  Bubbling phase');
   }, true);
+
+  // 不加 true :
+  // Document -> <html> -> <body> -> <button> (这时打印 Button 的语句) -> <body> (这时打印 body 的语句) -> <html> -> Document
+
+  // 加上 true :
+  // Document -> <html> -> <body> (这时打印 body 的语句) -> <button> (这时打印 Button 的语句) -> <body> -> <html> -> Document
 </script>
 </body>
 </html>

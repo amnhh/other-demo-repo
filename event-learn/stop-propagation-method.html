@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="myBtn">Click</button>
+<script>
+  var oBtn = document.getElementById('myBtn');
+
+  oBtn.addEventListener('click', function (e) {
+    console.log('I\'m button tag, I\'m clicked');
+    // The method `stopPropagation` can stop bubbling.
+    // Because of the buggle stopped, the body event won't trigger.
+    e.stopPropagation();
+  });
+
+  document.body.addEventListener('click', function () {
+    console.log('I\'m body tag, I\'m clicked');
+  });
+</script>
+</body>
+</html>

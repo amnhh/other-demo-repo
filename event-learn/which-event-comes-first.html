@@ -5,16 +5,13 @@
   <title>Title</title>
 </head>
 <body>
-<button id="myBtn">Click</button>
+<button id="myBtn" onClick="console.log('I\'m clicked on DOM')">Click</button>
 <script>
   var oBtn = document.getElementById('myBtn');
 
-  // btn -> Capturing phase
+  // In any ways, the event binded on DOM comes first.
   oBtn.addEventListener('click', function () {
-    console.log('Button clicked on Caputring phase');
-  });
-  document.body.addEventListener('click', function () {
-    console.log('Body clicked on  Bubbling phase');
+    console.log('I\'m added by addEventListener');
   }, true);
 </script>
 </body>

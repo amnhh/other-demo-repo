@@ -11,11 +11,15 @@
   oLink.addEventListener('click', function (e) {
     e.preventDefault();
     console.log(e);
+    // 不管是 <a> 还是 <body> 上, `e.target` 都会指向最内层元素。
     console.log(e.target);
+    // 但是这里的 `e.currentTarget` 会指向绑定的那个元素。
+    // 比如这里给 `<a>` 绑定的事件内部, `e.currentTarget` 就会指向这个 `<a>` 标签本身
     console.log('currentTarget', e.currentTarget);
   });
   document.body.addEventListener('click', function (e) {
     console.log(e.target);
+    // 这里是给 `<body>` 标签绑定的事件处理函数内部, `e.currentTarget` 就会指向 `<body>`
     console.log('currentTarget', e.currentTarget);
   });
 </script>

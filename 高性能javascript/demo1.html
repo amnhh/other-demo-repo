@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<script>
+  var count = 10000;
+  var _html = '';
+  for (var i = 0; i < count; i ++) {
+    _html += '<p>anning</p>';
+  }
+  var oDiv = document.getElementById('example');
+  oDiv.innerHTML = _html;
+
+
+  // xxx.children
+  var childrenStartTime = Date.now();
+  var children = oDiv.children;
+  for (var i = 0; i < children.length; i ++) {
+    children[i].innerHTML = 5;
+  }
+  var childrenEndTime = Date.now();
+  console.log(childrenEndTime - childrenStartTime);
+
+  // xxx.childNodes
+  var childNodesStartTime = Date.now();
+  var childNodes = oDiv.childNodes;
+  for (var i = 0; i < childNodes.length; i ++) {
+    childNodes[i].innerHTML = 10;
+  }
+  var childNodesEndTime = Date.now();
+  console.log(childNodesEndTime - childNodesStartTime);
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="myInput">
+<script>
+  var amnhh = document.getElementById('myInput');
+
+  // `getAttribute('checked')` 检测不到用户的点击，只能检测到通过 `setAttribute('checked', true)` 来附加上的 `checked` 的状态
+  // 对 `checkbox` 以后使用 `checked` 来检测其是否为 `checked` 状态
+  // 而且在用户手动勾选使之状态变为 `checked` 的时候, 再使用 `setAttribute` 就更改不了其状态了
+</script>
+</body>
+</html>

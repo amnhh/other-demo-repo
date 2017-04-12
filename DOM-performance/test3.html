@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .yellow {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background: greenyellow;
+    }
+  </style>
+</head>
+<body>
+<div class="yellow" id="myDiv"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+<div class="yellow"></div>
+
+<script>
+  // 直接操作
+//  var myDiv = document.getElementById('myDiv');
+//  var time1 = Date.now();
+//  var num = 1e6;
+//  for (var i = 0; i < num; i ++) {
+//    myDiv.style.width = '300px';
+//    myDiv.style.height = '300px';
+//    myDiv.style.width = '200px';
+//    myDiv.style.height = '200px';
+//  }
+//  var time2 = Date.now();
+//  console.log(time2 - time1); // 2214
+
+
+    // 先隐藏，使之脱离文档之外，操作完了之后再回来
+//  var myDiv = document.getElementById('myDiv');
+//  var time1 = Date.now();
+//  myDiv.style.display = 'none';
+//  var num = 1e6;
+//  for (var i = 0; i < num; i ++) {
+//    myDiv.style.width = '300px';
+//    myDiv.style.height = '300px';
+//    myDiv.style.width = '200px';
+//    myDiv.style.height = '200px';
+//  }
+//  myDiv.style.display = 'inline-block';
+//  var time2 = Date.now();
+//  console.log(time2 - time1); // 1753
+
+  var myDiv = document.getElementById('myDiv');
+  var time1 = Date.now();
+  var num = 1e6;
+  for (var i = 0; i < num; i ++) {
+    myDiv.style.width = '300px';
+    myDiv.style.height = '300px';
+    myDiv.style.width = '200px';
+    myDiv.style.height = '200px';
+  }
+  var time2 = Date.now();
+  console.log(time2 - time1); // 2214
+</script>
+</body>
+</html>

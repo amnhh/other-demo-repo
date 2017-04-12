@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <ul id="myUl"></ul>
+  <script>
+    var myUl = document.getElementById('myUl');
+    var num = 1e5;
+
+//    // 只创建 element => 524
+//    var time1 = Date.now();
+//    for (var i = 0; i < num; i ++) {
+//      var liEle = document.createElement('li');
+//      liEle.innerHTML = i;
+//    }
+//    var time2 = Date.now();
+//    console.log(time2 - time1); // 524 => 执行创建 `element` 的时间
+
+//    // 直接执行添加
+//    var time1 = Date.now();
+//    for (var i = 0; i < num; i ++) {
+//      var liEle = document.createElement('li');
+//      liEle.innerHTML = i;
+//      myUl.appendChild(liEle);
+//    }
+//    window.onload = function () {
+//      var time2 = Date.now();
+//      console.log(time2 - time1);
+//      // 执行总时间 => 构建 dom => 8.39s, 渲染总时间 => 11223 ms
+//    }
+
+//    var time1 = Date.now();
+//    myUl.style.display = 'none';
+//    for (var i = 0; i < num; i ++) {
+//      var liEle = document.createElement('li');
+//      liEle.innerHTML = i;
+//      myUl.appendChild(liEle);
+//    }
+//
+//    myUl.style.display = 'block';
+//    var time2 = Date.now();
+//    console.log(time2 - time1); // 执行总时间 : 9.08s, 渲染总时间 => 12652 ms
+
+    // 文档碎片
+    var time1 = Date.now();
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < num; i ++) {
+      var liEle = document.createElement('li');
+      liEle.innerHTML = i;
+      fragment.appendChild(liEle);
+    }
+    myUl.appendChild(fragment);
+
+    var time2 = Date.now();
+    console.log(time2 - time1); // 也是差不多的时间，应该是在 createElement 上就浪费了很多的时间
+
+
+  </script>
+</body>
+</html>

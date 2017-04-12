@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul id="myUl"></ul>
+<script>
+  var myUl = document.getElementById('myUl');
+  var num = 1e5;
+
+
+  // 直接添加
+  var time1 = Date.now();
+  var str = '';
+  for (var i = 0; i < num; i ++) {
+    str += '<li>' + i + '</li>';
+  }
+
+  var time3 = Date.now();
+  myUl.innerHTML = str;
+  var time4 = Date.now();
+  console.log('innerHTML 用了' + (time4 - time3) + 'ms'); // 152
+
+  var time2 = Date.now();
+  console.log(time2 - time1); // load : 2.84s, parseHTML : 2625ms
+</script>
+</body>
+</html>

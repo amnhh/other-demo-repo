@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var amnhh = () => {
+    console.log(this);
+  };
+  amnhh(); // window
+  amnhh.call({again : 1}); // window
+  amnhh.bind({again : 1})(); // window
+
+  var amnhh = {
+    again : () => {
+      console.log(this);
+    }
+  };
+  amnhh.again(); // window
+  amnhh.again.call({again : 1}); // window
+
+  function amnhh () {
+    var son = () => {
+      console.log(this);
+    }
+    son();
+  }
+  amnhh(); // window
+
+  amnhh.bind({again : 1})(); // {again : 1}
+</script>
+</body>
+</html>

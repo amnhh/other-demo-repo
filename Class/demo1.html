@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  function inherit (proto) {
+    function f () {};
+    f.prototype = proto;
+
+    return new f();
+  }
+
+  function range (a, b) {
+    var r = inherit(range.method);
+
+    r.a = a;
+    r.b = b;
+
+    return r;
+  }
+
+  range.method = {
+    sayHello : function () {
+      console.log('Hello')
+    }
+  };
+
+  var amnhh = range(1, 2);
+  console.log(amnhh);
+</script>
+</body>
+</html>

@@ -27,7 +27,7 @@ var enumerableFalseObject = {
 
 // 手动置为不可枚举
 Object.defineProperty(enumerableFalseObject, 'amnhh1', {
-  enumerable : false,
+  enumerable : false
 });
 
 
